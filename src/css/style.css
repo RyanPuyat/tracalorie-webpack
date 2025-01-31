@@ -1,0 +1,50 @@
+.nav-link {
+  text-decoration: none; /* Optional: Remove underline */
+  color: #000; /* Optional: Set initial text color */
+}
+
+.nav-link:hover {
+  color: #afccda; /* Change text color on hover */
+  text-decoration: underline; /* Optional: Add underline on hover */
+}
+
+#intro {
+  background-image: url('../image/herotracker.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 50px 0;
+  position: relative;
+  z-index: -1;
+}
+
+#intro .container-lg {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 1024px) {
+  #intro {
+    height: 790px;
+    max-width: 2200px;
+    margin: 0 auto;
+  }
+}
+
+/* Styles for smaller screens */
+@media (max-width: 1023px) {
+  #intro {
+    background-image: url('../image/mobile.jpg');
+    height: 800px; /* Adjust as needed */
+  }
+
+  .mobile {
+    margin-top: 200px;
+
+    text-align: center; /* Centers text horizontally */
+    /* display: flex; */
+    /* justify-content: center; Centers text horizontally */
+    align-items: center; /* Centers text vertically */
+    /* height: 100vh; Adjust the height as needed */
+  }
+}

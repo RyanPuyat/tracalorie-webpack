@@ -191,6 +191,9 @@ class CalorieTracker {
 
   _displayCalorieProgressBar() {
     const progressEl = document.querySelector('#calorie-progress');
+    progressEl.classList.add('progress-bar-striped');
+    progressEl.classList.add('progress-bar-animated');
+
     const percentage = (this._totalCalorie / this._calorieLimit) * 100;
     const width = Math.min(percentage, 100);
 

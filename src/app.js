@@ -2,10 +2,10 @@ import '@fortawesome/fontawesome-free/js/all';
 import { Modal, Collapse } from 'bootstrap';
 import CalorieTracker from './Tracker';
 import { Meal, WorkOut } from './Item';
-import './css/bootstrap.css';
+import '../css/main.css';
 import './css/style.css';
 
-//This Section has been refractor the meal and workout into one by changing to _newItem
+// This Section has been refractor the meal and workout into one by changing to _newItem
 class App {
   constructor() {
     this._tracker = new CalorieTracker();
@@ -47,7 +47,7 @@ class App {
 
     //validate input
     if (name.value === '' || calories.value === '') {
-      alert('Please Enter A Value');
+      alert('Please enter a value');
       return;
     }
 
@@ -77,7 +77,7 @@ class App {
       e.target.classList.contains('delete') ||
       e.target.classList.contains('fa-xmark')
     ) {
-      if (confirm('Are you You sure?')) {
+      if (confirm('Are you sure you want to delete this item?')) {
         const id = e.target.closest('.card').getAttribute('data-id');
 
         type === 'meal'
@@ -115,8 +115,14 @@ class App {
     this._tracker.setLimit(parseInt(limit.value));
     limit.value = '';
 
+    // const modalEl = document.querySelector('#limit-modal');
+    // const modal = Modal.getInstance(modalEl);
+    // modal.hide();
     const modalEl = document.querySelector('#limit-modal');
-    const modal = Modal.getInstance(modalEl);
+    let modal = Modal.getInstance(modalEl);
+    if (!modal) {
+      modal = new Modal(modalEl);
+    }
     modal.hide();
   }
 
@@ -129,4 +135,9 @@ class App {
   }
 }
 
-const app = new App();
+if (window.location.pathname === '/index.html') {
+  console.log('This is the index page');
+} else if (window.location.pathname === '/tracker.html') {
+  const app = new App();
+  console.log('This is the tracker page');
+}

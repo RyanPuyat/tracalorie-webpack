@@ -45,5 +45,10 @@ module.exports = {
       filename: 'index.html',
       template: './src/index.html',
     }),
+    new HtmlWebpackPlugin({
+      title: 'Webpack App',
+      filename: 'tracker.html',
+      template: './src/tracker.html',
+    }),
   ],
 };
