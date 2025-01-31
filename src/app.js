@@ -2,7 +2,7 @@ import '@fortawesome/fontawesome-free/js/all';
 import { Modal, Collapse } from 'bootstrap';
 import CalorieTracker from './Tracker';
 import { Meal, WorkOut } from './Item';
-import '../css/main.css';
+import './css/main.css';
 import './css/style.css';
 
 // This Section has been refractor the meal and workout into one by changing to _newItem
